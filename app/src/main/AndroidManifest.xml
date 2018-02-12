@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="genson.amor.stopwatch_alarm">
+    package="com.example.khent.stopwatch">
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".AlarmReciever" />
+        <service
+            android:name=".RingService"
+            android:enabled="true" />
     </application>
 
 </manifest>

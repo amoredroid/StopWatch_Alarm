@@ -1,65 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/timerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_time"
-        android:textSize="100sp"
-        android:textColor="#000000"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="130sp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
 
-        >
-
-        <Button
-            android:id="@+id/btnStart"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_start"
-            />
-        <Button
-            android:id="@+id/btnPause"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_pause"
-            />
-
-        <Button
-            android:id="@+id/btnLap"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/txt_lap" />
-    </LinearLayout>
-
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:id="@+id/container"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </LinearLayout>
 
-        </ScrollView>
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="00"
+            android:textColor="@android:color/background_light"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/minute"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/colon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/minute"
+            app:layout_constraintEnd_toStartOf="@+id/minute"
+            app:layout_constraintStart_toEndOf="@+id/hour"
+            app:layout_constraintTop_toTopOf="@+id/hour" />
+
+        <TextView
+            android:id="@+id/minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"
+            android:textColor="@android:color/background_light"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/colon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/seconds"
+            app:layout_constraintEnd_toStartOf="@+id/seconds"
+            app:layout_constraintStart_toEndOf="@+id/minute"
+            app:layout_constraintTop_toTopOf="@+id/minute" />
+
+        <TextView
+            android:id="@+id/seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="248dp"
+            android:layout_marginStart="8dp"
+            android:text="00"
+            android:textColor="@android:color/background_light"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/colon2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="51"
+            android:text="H"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/hour"
+            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintStart_toStartOf="@+id/hour"
+            app:layout_constraintTop_toBottomOf="@+id/hour" />
+
+        <TextView
+            android:id="@+id/m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="51"
+            android:text="M"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/minute"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/minute"
+            app:layout_constraintTop_toBottomOf="@+id/minute" />
+
+        <TextView
+            android:id="@+id/s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="51"
+            android:text="S"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/seconds"
+            app:layout_constraintHorizontal_bias="0.463"
+            app:layout_constraintStart_toStartOf="@+id/seconds"
+            app:layout_constraintTop_toBottomOf="@+id/seconds" />
+
+
+        <TextView
+            android:id="@+id/milli_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/m" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="345dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="29dp">
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22dp"
+        app:srcCompat="@drawable/ic_play_arrow_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>
